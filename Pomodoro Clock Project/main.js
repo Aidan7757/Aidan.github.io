@@ -12,6 +12,22 @@ var video = document.getElementById('video');
 
 var audio = new Audio("file:///Users/aidanchadha/Desktop/VS%20Code%20Practice%20Work/Pomodoro%20Clock/microwave-timer-117077.mp3")
 
+var workMinute30 = document.getElementById("30")
+var workMinute25 = document.getElementById("25")
+var workMinute15 = document.getElementById("15")
+
+var breakMinute15 = document.getElementById("15b")
+var breakMinute10 = document.getElementById("10")
+var breakMinute5 = document.getElementById("5")
+
+var selectedTime;
+
+var lastWorkMinutesSelected;
+var lastBreakMinutesSelected;
+
+//store a reference to a timer variable
+var startTimer;
+
 //function to stop a sound
 function stopSound() {
     audio.pause();
@@ -22,8 +38,61 @@ function playSound() {
     setTimeout(stopSound, 2000);
 }
 
-//store a reference to a timer variable
-var startTimer;
+
+//changing the time from the work time and break time buttons
+workMinute30.addEventListener('click', function() {
+    lastWorkMinutesSelected = 30
+    wm.innerText = 30
+    ws.innerText = "00"
+    document.getElementById('counter').innerText = 0;
+    stopInterval()
+    startTimer = undefined;
+});
+
+workMinute25.addEventListener('click', function() {
+    lastWorkMinutesSelected = 25
+    wm.innerText = 25
+    ws.innerText = "00"
+    document.getElementById('counter').innerText = 0;
+    stopInterval()
+    startTimer = undefined;
+});
+
+workMinute15.addEventListener('click', function() {
+    lastWorkMinutesSelected = 15
+    wm.innerText = 15
+    ws.innerText = "00"
+    document.getElementById('counter').innerText = 0;
+    stopInterval()
+    startTimer = undefined;
+});
+
+breakMinute15.addEventListener('click', function() {
+    lastBreakMinutesSelected = 15;
+    bm.innerText = 15
+    bs.innerText = "00"
+    document.getElementById('counter').innerText = 0;
+    stopInterval()
+    startTimer = undefined;
+});
+
+breakMinute10.addEventListener('click', function() {
+    lastBreakMinutesSelected = 10;
+    bm.innerText = 10
+    bs.innerText = "00"
+    document.getElementById('counter').innerText = 0;
+    stopInterval()
+    startTimer = undefined;
+});
+
+breakMinute5.addEventListener('click', function() {
+    lastBreakMinutesSelected = 5;
+    bm.innerText = 5
+    bs.innerText = "00"
+    document.getElementById('counter').innerText = 0;
+    stopInterval()
+    startTimer = undefined;
+});
 
 start.addEventListener('click', function(){
     if(startTimer === undefined){
@@ -34,12 +103,20 @@ start.addEventListener('click', function(){
 })
 
 reset.addEventListener('click', function(){
-    wm.innerText = 25;
-    ws.innerText = "00";
-
-    bm.innerText = 5;
-    bs.innerText = "00";
-
+    if (lastWorkMinutesSelected) {
+        wm.innerText = lastWorkMinutesSelected;
+        ws.innerText = "00";
+    } else {
+        wm.innerText = 25;
+        ws.innerText = "00";
+    }
+    if (lastBreakMinutesSelected) {
+        bm.innerText = lastBreakMinutesSelected;
+        bs.innerText = "00"
+    } else {
+        bm.innerText = 5;
+        bs.innerText = "00";
+    }
     document.getElementById('counter').innerText = 0;
     stopInterval()
     startTimer = undefined;
