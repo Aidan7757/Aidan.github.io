@@ -88,15 +88,17 @@ p {
     grid-area: 3 / 3 / 3 / 3;
 }
 
-#pause {
+#stop {
     grid-area: 3 / 4 / 3 / 4;
 }
 
 #video {
-    width: 500px;
-    height: 300px;
     display: block;
-    margin: auto;
-    border: 5px round #88B169;
+    margin: 0 auto;
+    width: 500;
+    height: 350;
+    border-style: solid;
+    border-width: 3px;
     border-radius: 15px;
+    border-color: #88B169;
 }

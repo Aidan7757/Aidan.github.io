@@ -1,5 +1,5 @@
 var start = document.getElementById('start');
-var stop = document.getElementById('pause');
+var stop = document.getElementById('stop');
 var reset = document.getElementById('reset');
 
 var wm = document.getElementById('w_minutes');
@@ -8,16 +8,22 @@ var ws = document.getElementById('w_seconds');
 var bm = document.getElementById('b_minutes');
 var bs = document.getElementById('b_seconds');
 
-var startTimer;
-var audio = new Audio('file:///Users/aidanchadha/Desktop/VS%20Code%20Practice%20Work/JavaScript%20Projects/Pomodoro%20Clock/ding-ding-sound-effect/ding-ding-sound-effect.mp3');
+var video = document.getElementById('video');
 
-function stopAudio() {
-    audio.stop();
+var audio = new Audio("file:///Users/aidanchadha/Desktop/VS%20Code%20Practice%20Work/Pomodoro%20Clock/microwave-timer-117077.mp3")
+
+//function to stop a sound
+function stopSound() {
+    audio.pause();
 }
+//function to play a sound
 function playSound() {
     audio.play();
-    setTimeout(stopAudio, 1500);
-  };
+    setTimeout(stopSound, 2000);
+}
+
+//store a reference to a timer variable
+var startTimer;
 
 start.addEventListener('click', function(){
     if(startTimer === undefined){
@@ -51,9 +57,8 @@ function timer(){
     if(ws.innerText != 0){
         ws.innerText = parseInt(ws.innerText)
         ws.innerText--;
-        ws.innerText = ws.innerText.toString().padStart(2, '0')
+        ws.innerText = ws.innerText.toString().padStart(2, '0');
     } else if(wm.innerText != 0 && ws.innerText == 0){
-        ws.innerText = parseInt(ws.innerText)
         ws.innerText = 59;
         wm.innerText--;
     }
@@ -64,9 +69,8 @@ function timer(){
         if(bs.innerText != 0){
             bs.innerText = parseInt(bs.innerText)
             bs.innerText--;
-            bs.innerText = bs.innerText.toString().padStart(2, '0')
+            bs.innerText = bs.innerText.toString().padStart(2, '0');
         } else if(bm.innerText != 0 && bs.innerText == 0){
-            bs.innerText = parseInt(bs.innerText)
             bs.innerText = 59;
             bm.innerText--;
         }
