@@ -16,6 +16,7 @@ h1 {
     background-color: #F5E4C3;
     margin: 0 auto;
     border: 5px solid #88B169;
+    border-radius: 15px;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
