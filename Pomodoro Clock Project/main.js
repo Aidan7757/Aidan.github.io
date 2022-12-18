@@ -20,6 +20,8 @@ var breakMinute15 = document.getElementById("15b")
 var breakMinute10 = document.getElementById("10")
 var breakMinute5 = document.getElementById("5")
 
+var fullscreenButton = document.getElementById("fullscreen-button");
+
 var selectedTime;
 
 var lastWorkMinutesSelected;
@@ -28,6 +30,13 @@ var lastBreakMinutesSelected;
 //store a reference to a timer variable
 var startTimer;
 
+
+//function to make it fullscreen
+fullscreenButton.addEventListener('click', function() {
+    document.documentElement.requestFullscreen().catch((e) => {
+        console.log(e)
+    });
+});
 //function to stop a sound
 function stopSound() {
     audio.pause();
