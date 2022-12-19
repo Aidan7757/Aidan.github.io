@@ -104,6 +104,48 @@ p {
     border-color: #88B169;
 }
 
+#footer {
+    font-weight: bold;
+    text-align: center;
+    position: fixed;
+    font-family: 'Kanit', sans-serif;
+    color: black;
+    bottom: 0;
+    left: 000px;
+    right: 0px;
+    width: 100%;
+    height: 30px;   /* Height of the footer */
+    background: #88B169;
+ }
+
+.fullscreen {
+    background-color: #F5E4C3;
+    position: absolute;
+    color: #88B169;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    border: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+    margin-left: 75%;
+    margin-right: 0%;
+}
+
+#fullscreen-button {
+    width: 35px;
+    height: 20px;
+    border: 50px;
+}
+
+.fullscreen :hover {
+    cursor: pointer;
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #F5E4C3;
@@ -159,7 +201,7 @@ p {
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
+  .dropdown-content a:hover {background-color: #ddd; cursor: grab;}
   
   /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {display: block;}
